@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+*.min.js
+*.min.css
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg
+*.ico
+*.gif
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.mp4
+*.webm
