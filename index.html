@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Apps de Hipólito Arias</title>
+  <meta name="description" content="Todas las apps para iPhone y Apple Watch de Hipólito Arias en un solo sitio.">
+  <meta property="og:title" content="Apps de Hipólito Arias">
+  <meta property="og:description" content="Todas mis apps para iPhone y Apple Watch en un solo sitio.">
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/icons/zonilo.jpg">
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --card: #ffffff;
+      --text: #16171a;
+      --muted: #6b6d74;
+      --line: rgba(0, 0, 0, .07);
+      --chip: rgba(0, 0, 0, .05);
+      --chip-on: #16171a;
+      --chip-on-text: #ffffff;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+      --shadow-hover: 0 2px 4px rgba(0,0,0,.05), 0 18px 40px rgba(0,0,0,.09);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e0f12;
+        --card: #17181c;
+        --text: #f2f2f4;
+        --muted: #9a9ca3;
+        --line: rgba(255, 255, 255, .08);
+        --chip: rgba(255, 255, 255, .07);
+        --chip-on: #f2f2f4;
+        --chip-on-text: #0e0f12;
+        --shadow: 0 1px 2px rgba(0,0,0,.3);
+        --shadow-hover: 0 18px 40px rgba(0,0,0,.45);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 72px 20px 48px; }
+
+    header { margin-bottom: 36px; }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+    h1 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      font-size: clamp(36px, 6vw, 56px); line-height: 1.05; letter-spacing: -.035em; font-weight: 700; margin: 0 0 14px;
+    }
+    .lead { font-size: 18px; color: var(--muted); max-width: 34em; margin: 0; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+    .filters button {
+      border: 0; cursor: pointer; font: inherit; font-size: 14px; font-weight: 500;
+      padding: 8px 16px; border-radius: 999px; background: var(--chip); color: var(--text);
+      transition: background .15s, color .15s;
+    }
+    .filters button[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-text); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .card {
+      position: relative; display: flex; flex-direction: column; gap: 14px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 20px;
+      box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card[hidden] { display: none; }
+    .top { display: flex; align-items: center; gap: 14px; }
+    .icon {
+      width: 64px; height: 64px; border-radius: 15px; flex: none; object-fit: cover;
+      box-shadow: 0 0 0 1px var(--line), 0 4px 12px rgba(0,0,0,.12);
+    }
+    .name { font-size: 18px; font-weight: 650; letter-spacing: -.01em; margin: 0; line-height: 1.25; }
+    .cat { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
+    .desc { color: var(--muted); font-size: 15px; margin: 0; flex: 1; }
+    .links { display: flex; gap: 8px; }
+    .links a {
+      flex: 1; text-align: center; text-decoration: none; font-size: 14px; font-weight: 600;
+      padding: 10px 12px; border-radius: 12px; transition: opacity .15s, background .15s;
+    }
+    .links a.web { background: var(--chip-on); color: var(--chip-on-text); }
+    .links a.store { background: var(--chip); color: var(--text); }
+    .links a:hover { opacity: .85; }
+    .links a:focus-visible, .filters button:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+    footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+    footer a { color: inherit; }
+
+    @media (max-width: 520px) {
+      .wrap { padding: 48px 16px 32px; }
+      .grid { grid-template-columns: 1fr; }
+      .lead { font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Hipólito Arias</p>
+      <h1>Mis apps</h1>
+      <p class="lead">Todas las apps que he hecho para iPhone y Apple Watch, en un solo sitio. Entra en su web o descárgalas directamente.</p>
+    </header>
+
+    <nav class="filters" aria-label="Filtrar por categoría"></nav>
+    <section class="grid" aria-live="polite"></section>
+
+    <footer>
+      <span>© <span id="year"></span> Hipólito Arias</span>
+      <a href="https://github.com/litoarias">GitHub</a>
+    </footer>
+  </main>
+
+  <script>
+    // Para añadir una app nueva, añade una entrada a esta lista y su icono en assets/icons/.
+    const apps = [
+      { name: "Zona SER Madrid", cat: "Movilidad", icon: "zonasermadrid", web: "landing-zonasermadrid", id: "6818755779",
+        desc: "Tu barrio SER de Madrid de un vistazo y un aviso al salir de tu barrio de residente." },
+      { name: "Zonilo", cat: "Movilidad", icon: "zonilo", web: "landing-zonilo", id: "6818110331",
+        desc: "Zonas de bajas emisiones de toda España según tu vehículo, con avisos y cámaras oficiales." },
+      { name: "Pressure Control", cat: "Salud", icon: "pressure-control", web: "landing-pressure-control", id: "6738280822",
+        desc: "Diario de tensión arterial y pulso, con tendencias claras e informe PDF para tu médico." },
+      { name: "SetReady", cat: "Salud", icon: "setready", web: "landing-setready", id: "6770435744",
+        desc: "Entrenamiento de fuerza en Apple Watch y iPhone con descanso adaptativo y recuperación por pulso." },
+      { name: "TodaciApp", cat: "Salud", icon: "todaciapp", web: "landing-todaciapp", id: "6760829372",
+        desc: "Sigue día a día tu tratamiento de 25 días para dejar de fumar, con recordatorios." },
+      { name: "El Órdago", cat: "Juegos", icon: "ordago", web: "landing-ordago", id: "6761787517",
+        desc: "Mus con tapete y cartas españolas: multijugador online y P2P, bots e historial de partidas." },
+      { name: "Howl Werewolf", cat: "Juegos", icon: "howl", web: "landing-howl-werewolf", id: "6760935954",
+        desc: "El clásico Hombre Lobo con amigos: multijugador en tiempo real, roles y bots con IA." },
+      { name: "Broadside", cat: "Juegos", icon: "broadside", web: "landing-broadside", id: "6761305526",
+        desc: "Hundir la flota reinventado: multijugador local, rivales con IA y batallas P2P." },
+      { name: "GeoMiles", cat: "Juegos", icon: "geomiles", web: "landing-geomiles", id: "6767914731",
+        desc: "Juego de geografía con 331 mapas: países, capitales, ciudades, regiones y duelos en Game Center." },
+    ];
+
+    const grid = document.querySelector(".grid");
+    const filters = document.querySelector(".filters");
+    const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+    grid.innerHTML = apps.map(a => `
+      <article class="card" data-cat="${esc(a.cat)}">
+        <div class="top">
+          <img class="icon" src="assets/icons/${a.icon}.jpg" alt="" width="64" height="64" loading="lazy">
+          <div>
+            <h2 class="name">${esc(a.name)}</h2>
+            <p class="cat">${esc(a.cat)}</p>
+          </div>
+        </div>
+        <p class="desc">${esc(a.desc)}</p>
+        <div class="links">
+          <a class="web" href="https://litoarias.github.io/${a.web}/">Ver web</a>
+          <a class="store" href="https://apps.apple.com/app/id${a.id}">App Store</a>
+        </div>
+      </article>`).join("");
+
+    const cats = ["Todas", ...new Set(apps.map(a => a.cat))];
+    filters.innerHTML = cats.map((c, i) =>
+      `<button type="button" data-cat="${esc(c)}" aria-pressed="${i === 0}">${esc(c)}</button>`).join("");
+
+    filters.addEventListener("click", e => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+      const cat = btn.dataset.cat;
+      filters.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === btn));
+      grid.querySelectorAll(".card").forEach(card => {
+        card.hidden = cat !== "Todas" && card.dataset.cat !== cat;
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
