@@ -1,0 +1,14 @@
+# GitHub Pages (Jekyll) settings. Keeps repository docs, agent files, and
+# build tooling out of the published site (engineering handbook WEB-SITE-008).
+# Dot folders such as .handbook-docs are excluded by Jekyll automatically.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - README.md
+  - AUDIT.md
+  - docs/
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
