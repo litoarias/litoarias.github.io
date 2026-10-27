@@ -1,5 +1,5 @@
 # Managed by engineering-handbook. Edit only 'layers' and 'path', then run: handbook sync
 layers=core web
 path=.handbook-docs
-version=1.4.1+5833d64
-checksum=58b472dcfcace355
+version=1.4.2+c712fb3
+checksum=4febceaa4dd3d490
