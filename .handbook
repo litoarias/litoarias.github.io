@@ -2,5 +2,5 @@
 layers=core web
 path=.handbook-docs
 apps=
-version=1.6.0+a8ef438
-checksum=0c0a0d008a6f41a5
+version=1.7.0+c90e346
+checksum=807696c4b41d72af
