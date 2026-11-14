@@ -131,6 +131,8 @@
         desc: "Entrenamiento de fuerza en Apple Watch y iPhone con descanso adaptativo y recuperación por pulso." },
       { name: "TodaciApp", cat: "Salud", icon: "todaciapp", web: "landing-todaciapp", id: "6760829372",
         desc: "Sigue día a día tu tratamiento de 25 días para dejar de fumar, con recordatorios." },
+      { name: "Smoke Broken", cat: "Salud", icon: "smokebroken", web: "landing-smokebroken", id: "6503201488",
+        desc: "Fuma menos y déjalo a tu ritmo: cuenta cada cigarrillo con un toque, calma las ganas respirando y reta a tus amigos." },
       { name: "El Órdago", cat: "Juegos", icon: "ordago", web: "landing-ordago", id: "6761787517",
         desc: "Mus con tapete y cartas españolas: multijugador online y P2P, bots e historial de partidas." },
       { name: "Howl Werewolf", cat: "Juegos", icon: "howl", web: "landing-howl-werewolf", id: "6760935954",
@@ -139,6 +141,9 @@
         desc: "Hundir la flota reinventado: multijugador local, rivales con IA y batallas P2P." },
       { name: "GeoMiles", cat: "Juegos", icon: "geomiles", web: "landing-geomiles", id: "6767914731",
         desc: "Juego de geografía con 331 mapas: países, capitales, ciudades, regiones y duelos en Game Center." },
+      // Sin "id" mientras la app no esté en la App Store: la tarjeta sale sin ese botón.
+      { name: "Wayglade", cat: "Juegos", icon: "wayglade", web: "landing-leonida-atlas",
+        desc: "Mapa interactivo sin conexión y guía no oficial de Leonida, con más de 600 lugares y tu progreso en iCloud." },
     ];
 
     const grid = document.querySelector(".grid");
@@ -157,7 +162,7 @@
         <p class="desc">${esc(a.desc)}</p>
         <div class="links">
           <a class="web" href="https://litoarias.github.io/${a.web}/">Ver web</a>
-          <a class="store" href="https://apps.apple.com/app/id${a.id}">App Store</a>
+          ${a.id ? `<a class="store" href="https://apps.apple.com/app/id${a.id}">App Store</a>` : ""}
         </div>
       </article>`).join("");
 
